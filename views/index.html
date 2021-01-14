@@ -1,24 +1,50 @@
 
-<!-- <script type="text/javascript" src="src/thermostat.js">
-</script> -->
-<html>
 
+<html>
+   
 <head>
     <link rel="stylesheet" href="../public/styles.css">
+    <style>
+        a.test {
+            font-family: Arial;
+        }
+    </style>
 </head>
 
 
 <body>
+    <script src="../src/thermostat.js"></script>
+    <a href="http://jquery.com/"></a>
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function(){ 
+            var thermostat = new Thermostat();
 
-Temp:
+  $('#temperature').text(thermostat.temperature);
+
+  $('#temperature-up').on('click', function() {
+      thermostat.increase();
+      $('#temperature').text(thermostat.temperature);
+  })
+    
+  $('#temperature-down').on('click', function() {
+      thermostat.decrease();
+      $('#temperature').text(thermostat.temperature);
+  })
+
+
+       
+})
+    </script>
+<h1 id="temperature"></h1>
  <br>
- <button onclick="decrease()"> - </button>
-<input type="text" id="this.temperature" value="20">
-<button onclick="increase()"> + </button>
+ <button id="temperature-down"> - </button>
+
+<button id="temperature-up"> + </button>
 <br>
-<button onclick="reset()"> Reset </button>
+<button id="temperature-reset"> Reset </button>
 <br>
-<button onclick="powerSaving()"> Power Save </button>
+<button id="Power-Saving"> Power Save </button>
 
 </body>
 
