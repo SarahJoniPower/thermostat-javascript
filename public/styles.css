@@ -2,8 +2,23 @@ body{
     background-color: rgb(119, 182, 236);
     background-size: cover;
     text-align: center;
+    font-family: 'Helvetica';
 }
 
 h1{
     text-align: center;
+    font-family: 'Helvetica';
 }
+
+.low-usage {
+    color: green;
+}
+
+.medium-usage {
+    color: black;
+}
+
+.high-usage {
+    color: red;
+}
+

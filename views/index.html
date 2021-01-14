@@ -4,11 +4,7 @@
    
 <head>
     <link rel="stylesheet" href="../public/styles.css">
-    <style>
-        a.test {
-            font-family: Arial;
-        }
-    </style>
+   
 </head>
 
 
@@ -25,26 +21,40 @@
   $('#temperature-up').on('click', function() {
       thermostat.increase();
       $('#temperature').text(thermostat.temperature);
+      $('#temperature').attr('class', thermostat.energyUsage());
   })
     
   $('#temperature-down').on('click', function() {
       thermostat.decrease();
       $('#temperature').text(thermostat.temperature);
+      $('#temperature').attr('class', thermostat.energyUsage());
+  })
+
+  $('#temperature-reset').click(function() { //this is just another way of the .on('click')
+    thermostat.reset();
+    $('#temperature').text(thermostat.temperature);
+    $('#temperature').attr('class', thermostat.energyUsage());
+  })
+
+  $('#Power-Saving').click(function() {
+      thermostat.powerSaving();
+      $('temperature').text(thermostat.temperature);
+      $('#temperature').attr('class', thermostat.energyUsage());
   })
 
 
        
 })
     </script>
-<h1 id="temperature"></h1>
+<h1>Thermostat (°C)</h1>
+<h1 id="temperature" ></h1>
  <br>
- <button id="temperature-down"> - </button>
-
+<button id="temperature-down"> - </button>
 <button id="temperature-up"> + </button>
 <br>
 <button id="temperature-reset"> Reset </button>
 <br>
-<button id="Power-Saving"> Power Save </button>
+<button id="Power-Saving"> Power Saving Mode </button>
 
 </body>
 
